@@ -1,0 +1,35 @@
+@import "./cdn.scss";
+@import "./header.scss";
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+  }
+  html {
+    font-family: "Open+Sans", "Raleway", sans-serif;
+  }
+  
+  .container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: auto;
+    position: relative;
+  }
+  .title {
+    text-align: center;
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "Raleway";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
