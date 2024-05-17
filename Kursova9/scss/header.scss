@@ -24,6 +24,8 @@
     }
 
     .logo-title{
+        position: relative;
+        z-index: 3;
         font-family: "Raleway";
         font-size: 30px;
         font-weight: 800;
@@ -42,7 +44,6 @@
         color:#FFFFFF;
     }
     .navigation{
-        border: 2px solid crimson;
         width: 606px;
     }
     
@@ -51,6 +52,8 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 3;
     }
     
     .navigation-list__item {
@@ -58,7 +61,6 @@
     font-size: 22px;
     font-weight: 400;
     font-family: "Raleway";
-    position: relative;
     }
 
     .navigation-list__item a:active {
@@ -140,6 +142,8 @@ display: flex;
 justify-content: center;
 width: 370px;
 align-items: center ;
+position: relative;
+z-index: 2;
 }
 .button-link__item{
     width: 370px;
@@ -160,3 +164,88 @@ align-items: center ;
     background-color: #FF4343;
     box-shadow:  4px 4px 30px 5px rgb(248, 83, 83, 0.4);
 }
+.burger__map{
+    display: none;
+}
+@media(max-width: 767px){
+.burger__map{
+display: block;
+position: relative;
+width: 30px;
+height: 20px;
+top: 0;
+left: 94%;
+z-index: 3;
+} 
+.burger__map span{
+    position: absolute;
+    background-color: #FFFFFF;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+    transition: 1s all ease 0s;
+}
+.navigation-list{
+    position: fixed;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    top:0;
+    right: -100%;
+    transition: 1s all ease 0s;
+    padding: 100px 20px;
+}
+.navigation-list.active{
+    right: 0;
+}
+.burger__map::before, 
+.burger__map::after{
+    content: '';
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: 0.5s all ease 0s;
+   }
+   .burger__map::before{
+    top: 0;
+   }
+   .burger__map::after{
+    bottom: 0;
+   }
+   .header::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: rgb(42, 50, 83, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: cover;
+    z-index: 3;
+    }
+    .navigation-list{
+        display: block;
+    }
+    .navigation-list__item{
+        margin-bottom: 20px;
+    }
+    .burger__map.active::before{
+        transform: rotate(45deg);
+        top: 9px;
+    }
+    .burger__map.active::after{
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    .burger__map.active span{
+        transform: scale(0);
+
+    }
+   }
